@@ -4,12 +4,6 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <SpaRoot>client\</SpaRoot>
     </PropertyGroup>
-    
-    <ItemGroup>
-        <PackageReference Include="MassTransit.AspNetCore" Version="7.0.4" />
-        <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.4" />
-        <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.4" />
-    </ItemGroup>
 
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
@@ -18,8 +12,15 @@
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     </ItemGroup>
 
+
     <ItemGroup>
       <ProjectReference Include="..\Mt.Broadcast.Contracts\Mt.Broadcast.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MassTransit.AspNetCore" Version="7.0.4" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.4" />
+      <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.4" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

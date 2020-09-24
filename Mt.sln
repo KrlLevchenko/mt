@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mt.Broadcast.Sender", "Mt.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mt.Broadcast.Contracts", "Mt.Broadcast.Contracts\Mt.Broadcast.Contracts.csproj", "{C2079ABE-A06E-4A32-A12B-F01AE1A5A204}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mt.Broadcast.Receiver", "Mt.Broadcast.Receiver\Mt.Broadcast.Receiver.csproj", "{1F67A08D-C8B9-4C48-ACBE-0463784FE791}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{C2079ABE-A06E-4A32-A12B-F01AE1A5A204}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2079ABE-A06E-4A32-A12B-F01AE1A5A204}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2079ABE-A06E-4A32-A12B-F01AE1A5A204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F67A08D-C8B9-4C48-ACBE-0463784FE791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F67A08D-C8B9-4C48-ACBE-0463784FE791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F67A08D-C8B9-4C48-ACBE-0463784FE791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F67A08D-C8B9-4C48-ACBE-0463784FE791}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
