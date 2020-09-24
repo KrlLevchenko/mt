@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,15 @@ namespace Mt.Broadcast.Sender
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddMassTransit(cfg =>
+            {
+                cfg.UsingRabbitMq((context, configurator) => configurator.Host(Configuration["RabbitMq:Host"], host =>
+                {
+                    host.Username(Configuration["RabbitMq:User"]);
+                    host.Password(Configuration["RabbitMq:Password"]);
+                }));
+            });
             
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "client/build"; });
         }
@@ -42,13 +52,11 @@ namespace Mt.Broadcast.Sender
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

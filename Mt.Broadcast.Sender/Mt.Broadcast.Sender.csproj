@@ -6,6 +6,8 @@
     </PropertyGroup>
     
     <ItemGroup>
+        <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.0.4" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.4" />
         <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.4" />
     </ItemGroup>
 
@@ -14,6 +16,10 @@
         <Content Remove="$(SpaRoot)**" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Mt.Broadcast.Contracts\Mt.Broadcast.Contracts.csproj" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
