@@ -38,7 +38,11 @@ namespace Mt.Broadcast.Receiver
                         host.Username(Configuration["RabbitMq:User"]);
                         host.Password(Configuration["RabbitMq:Password"]);
                     });
-                    configurator.ConfigureEndpoints(context);
+                    
+                    configurator.ReceiveEndpoint("single-queue",e =>
+                    {
+                        e.ConfigureConsumers(context);
+                    });
                 });
                 cfg.AddConsumer<MessagesConsumer>();
             });
